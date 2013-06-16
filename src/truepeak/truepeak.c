@@ -93,6 +93,10 @@ int initTruePeakState(truePeakState* state, int channels, int inSamplingRate) {
     state->ringBufferPos = 0;
     return 0;
 }
+
+/*
+ The size of the caller-provided double* samples must be state->truePeakChannels * sizeof(double) * numberOfFrames
+ */
 int addSamplesDouble(truePeakState* state, double* samples, size_t numberOfFrames) {
     assert(state != NULL);
     assert(samples != NULL);
@@ -173,6 +177,10 @@ int addSamplesFloat(truePeakState* state, float* samples, size_t numberOfFrames)
     }
     return 0;
 }
+
+/*
+ The size of the caller-provided int* samples must be state->truePeakChannels * sizeof(int) * numberOfFrames
+ */
 int addSamplesInt(truePeakState* state, int* samples, size_t numberOfFrames) {
     assert(state != NULL);
     assert(samples != NULL);
