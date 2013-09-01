@@ -44,7 +44,7 @@ int main(int argc, const char * argv[])
     printf("Channels : %d, Fs : %d, totalFrames : %lld\n", nChannels, samplingFrequency, totalFrames);
     sf_count_t framesRead = 0;
     sf_count_t totalFramesRead = 0;
-    float *buffer = malloc(sizeof(int) * nChannels * FRAMES_PER_BUFFER);
+    float *buffer = malloc(sizeof(float) * nChannels * FRAMES_PER_BUFFER);
 
     truePeakState *s = malloc(sizeof(truePeakState));
     assert(s != NULL);
